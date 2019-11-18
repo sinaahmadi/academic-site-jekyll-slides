@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Jekyll and GitHub Pages for Academics</title>
+ <link href="http://localhost:4000/presentations/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/presentations/"/>
+ <updated>2019-11-18T19:47:20+00:00</updated>
+ <id>http://localhost:4000</id>
+ <author>
+   <name>Sina Ahmadi</name>
+   <email>ahmadi.sina@outlook.com</email>
+ </author>
+
+ 
+
+</feed>

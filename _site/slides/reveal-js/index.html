@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+      
+        Jekyll and GitHub Pages for Academics | Jekyll and GitHub Pages for Academics
+      
+    </title>
+
+    <!-- Description -->
+    
+      <meta name="description" content="Blogging made easy" />
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="/presentations/reveal.js/css/reveal.css"/>
+    
+      <link rel="stylesheet" href="/presentations/reveal.js/css/theme/serif.css" id="theme"/>
+    
+    <link rel="stylesheet" href="/presentations/public/css/syntax.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/presentations/reveal.js/css/print/pdf.css' : '/presentations/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <link rel="apple-touch-icon" href="/presentations/apple-touch-icon.png" />
+
+    <link rel="canonical" href="http://localhost:4000/presentations/slides/reveal-js/">
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    
+
+    <div class="reveal">
+      <div class="slides">
+
+        
+        
+
+        
+          <section>
+  <h1>Jekyll and GitHub Pages for Academics</h1>
+  <small><a href="/slides/reveal-js/">localhost:4000/slides/reveal-js/</a></small>
+  
+    <p>Blogging made easy</p>
+  
+</section>
+
+        
+
+        
+
+          <section>
+
+            
+
+              
+
+                <h2 id="outline">Outline</h2>
+
+<h3 id="introduction">Introduction</h3>
+<h3 id="jekyll-and-github-pages">Jekyll and GitHub Pages</h3>
+<h3 id="creating-your-own-website">Creating your own website</h3>
+
+
+
+              
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+            
+
+              
+
+                <section>
+                  
+
+                    
+
+<h2 id="introduction-1">Introduction</h2>
+
+<h3 id="why-an-academic-webpage">Why an academic webpage?</h3>
+
+<ul>
+  <li>Control of your content</li>
+  <li>Reach people who are actively searching for you</li>
+  <li>A personal brand</li>
+  <li>A competitive advantage</li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="why-jekyll-and-github-pages">Why Jekyll and GitHub Pages?</h3>
+<ul>
+  <li>Jekyll:
+    <ul>
+      <li>Transform your plain text into static websites and blogs.</li>
+    </ul>
+  </li>
+  <li>GitHib Page:
+    <ul>
+      <li>Free</li>
+      <li>Ad-free</li>
+      <li>Professional</li>
+      <li>All functionalities of version controlling</li>
+    </ul>
+  </li>
+  <li><strong>Jekyll has a built-in support for GitHub Pages</strong></li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="our-objectives-today">Our objectives today</h3>
+<h4 id="practical-session">Practical session</h4>
+
+<ul>
+  <li>Learn to
+    <ul>
+      <li>Deploy your own academic website</li>
+      <li>Import your publications in <em>bibtex</em></li>
+      <li>Add essential plugins</li>
+      <li>Create a blog</li>
+      <li>Add a commenting system</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+            
+
+              
+
+                <section>
+                  
+
+                    
+
+<h2 id="jekyll">Jekyll</h2>
+<h3 id="what-is-jekyll">What is Jekyll?</h3>
+
+<ul>
+  <li>Ruby + Liquid + YAML = Jekyll!</li>
+  <li>A blog-aware static site generator in Ruby</li>
+  <li>Depends on templates, aka. layouts</li>
+  <li>Ideal for personal, project, or organization sites</li>
+  <li>The engine behind GitHub Pages</li>
+  <li>Easily configurable</li>
+</ul>
+
+<p>Read more about the <a href="https://jekyllrb.com/philosophy/">Jekyll philosophy</a>.</p>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="how-does-jekyll-work">How does Jekyll work?</h3>
+
+<ul>
+  <li>Gathers content from <code class="highlighter-rouge">_post</code>, <code class="highlighter-rouge">_includes</code> and other files</li>
+  <li>Applies a layout</li>
+  <li>Converts Markdwon and Textile to HTML</li>
+  <li>Runs Liquid converters</li>
+  <li>Outputs static HTML pages in <code class="highlighter-rouge">_site</code> ready to be served by Apache, Nginx or other web servers.</li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h2 id="jekyll-features">Jekyll features</h2>
+
+<ul>
+  <li>Pagination</li>
+  <li>Custom <code class="highlighter-rouge">permalink</code> structure</li>
+  <li>Markdown/Textile conversion</li>
+  <li>Syntax highlighting</li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h2 id="directory-structure">Directory structure</h2>
+
+<p>A basic Jekyll site usually looks something like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
+├── _config.yml
+├── _data
+|   └── members.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.md
+|   └── on-simplicity-in-technology.md
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+|   └── 2009-04-26-barcamp-boston-4-roundup.md
+├── _sass
+|   ├── _base.scss
+|   └── _layout.scss
+├── _site
+├── .jekyll-metadata
+└── index.html # can also be an 'index.md' with valid front matter
+</code></pre></div></div>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="_configyml"><code class="highlighter-rouge">_config.yml</code></h3>
+
+<ul>
+  <li>YAML configuration</li>
+  <li>Global configuration options</li>
+  <li>Per page/post configuration options (YAML front matter)</li>
+  <li>Add your own key/value pairs and use them as you see fit</li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="setting-up-a-jekyll-website">Setting up a Jekyll website</h3>
+
+<p>Once Jekyll is installed, you can create your new blog with the following command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new YOUR_WEBSITE_NAME
+</code></pre></div></div>
+
+<p>Which will generates a folder with the following structure:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>YOUR_WEBSITE_NAME/
+  .gitignore
+  _config.yml
+  _includes
+  _layouts
+  _posts
+  _sass
+  about.md
+  css
+  feed.xml
+  index.html
+</code></pre></div></div>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+<h2 id="deployment">Deployment</h2>
+<p>Anywhere that can serve static pages including:</p>
+<ul>
+  <li>Amazon S3</li>
+  <li>GitHub Pages</li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+            
+
+              
+
+                <section>
+                  
+
+                    
+
+<h2 id="github-pages">GitHub Pages</h2>
+
+<iframe width="860" height="515" src="https://www.youtube.com/embed/2MsN8gpT6jY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<blockquote>
+  <p>“ When Jekyll is used alongside GitHub, it will automatically re-generate all the HTML pages for your website each time you commit a file.”</p>
+</blockquote>
+
+<p><em>Nota bene</em>: GitHub Pages does not support server-side languages such as PHP, Ruby, or Python.</p>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h2 id="essential-plugins">Essential plugins</h2>
+
+<p>Github does not allow any but a few specific plugins to run for security reasons 🤷🏻‍♂️</p>
+
+<ul>
+  <li>Local admin page: <a href="https://github.com/jekyll/jekyll-admin">jekyll-admin</a></li>
+  <li>Generate site map: <a href="https://github.com/jekyll/jekyll-sitemap">jekyll-sitemap</a></li>
+  <li>Generate RSS feed: <a href="https://github.com/jekyll/jekyll-feed">jekyll-feed</a></li>
+  <li>Importing bibliography: <a href="https://github.com/inukshuk/jekyll-scholar">jekyll-scholar</a> ✖︎</li>
+  <li>Generate post archives: <a href="https://github.com/jekyll/jekyll-archives">jekyll-archives</a></li>
+  <li>Add metadata tags for search engines: <a href="https://github.com/jekyll/jekyll-seo-tag">jekyll-seo-tag</a></li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="themes">Themes</h3>
+
+<ul>
+  <li>Default themes: <a href="https://pages.github.com/themes/">https://pages.github.com/themes/</a></li>
+  <li><a href="http://jekyllthemes.org/">http://jekyllthemes.org/</a></li>
+  <li><a href="https://jekyllthemes.io/">https://jekyllthemes.io/</a></li>
+</ul>
+
+<p>Learn how to create your own themes <a href="https://jekyllrb.com/docs/themes/">here</a>.</p>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="types-of-sites">Types of sites</h3>
+
+<p>There are three types of GitHub Pages sites:</p>
+<ul>
+  <li>user ➡ <code class="highlighter-rouge">&lt;user&gt;.github.io</code></li>
+  <li>organization ➡ <code class="highlighter-rouge">&lt;organization&gt;.github.io</code></li>
+  <li>project</li>
+</ul>
+
+<p>You can only create <strong>one</strong> user or organization site for each GitHub account.</p>
+
+
+
+                  
+                </section>
+
+              
+
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+
+              
+
+                
+
+<h1 id="lets-create-a-website">Let’s create a website</h1>
+
+
+
+              
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+            
+
+              
+
+                <section>
+                  
+
+                    
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="instructions">Instructions</h3>
+
+<ul>
+  <li>Install a full <a href="https://jekyllrb.com/docs/installation/">Ruby development environment</a></li>
+  <li><a href="https://jekyllrb.com/docs/installation/macos/">Jekyll on macOS</a></li>
+  <li><a href="https://jekyllrb.com/docs/installation/ubuntu/">Jekyll on Ubuntu</a></li>
+  <li><a href="https://jekyllrb.com/docs/installation/windows/">Jekyll on Windows</a></li>
+  <li>Install Jekyll and bundler gems</li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="gems">Gems</h3>
+
+<ul>
+  <li>Code you can include in Ruby projects</li>
+  <li>package up functionality and share others</li>
+  <li>Gems can perform functionality such as:
+    <ul>
+      <li>Converting a Ruby object to JSON</li>
+      <li>Pagination</li>
+      <li>Interacting with APIs such as GitHub</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="gemfile"><code class="highlighter-rouge">Gemfile</code></h3>
+
+<p>A <code class="highlighter-rouge">Gemfile</code> is a list of gems required for your site.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source "https://rubygems.org"
+
+gem "jekyll"
+
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
+end
+</code></pre></div></div>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="bundler">Bundler</h3>
+
+<p>Bundler installs the gems in your <code class="highlighter-rouge">Gemfile</code></p>
+
+<ul>
+  <li><code class="highlighter-rouge">bundle install</code> to install the gems</li>
+  <li>then <code class="highlighter-rouge">bundle exec jekyll serve</code> to build your site</li>
+</ul>
+
+<p>If you’re not using a <code class="highlighter-rouge">Gemfile</code> you can just run <code class="highlighter-rouge">jekyll serve</code></p>
+
+
+
+                  
+                </section>
+
+              
+
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+
+              
+
+                
+
+<h2 id="al-folio"><code class="highlighter-rouge">al-folio</code></h2>
+
+<p>https://github.com/alshedivat/al-folio</p>
+
+
+
+              
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+
+              
+
+                
+
+<h2 id="commenting-system">Commenting system</h2>
+
+<ul>
+  <li><a href="https://disqus.com/">Disqus</a></li>
+  <li><a href="https://www.intensedebate.com/">Intense Debate</a></li>
+  <li>Facebook comments</li>
+</ul>
+
+
+
+              
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+
+              
+
+                
+
+<h2 id="typical-workflow">Typical workflow</h2>
+
+<ul>
+  <li>Add/update new content to your website</li>
+  <li>Run locally using <code class="highlighter-rouge">jekyll serve</code></li>
+  <li>Push the changes to your <code class="highlighter-rouge">gh-pages</code> or <code class="highlighter-rouge">master</code> branch</li>
+</ul>
+
+
+
+              
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+
+              
+
+                
+
+<h2 id="for-more-documentations">For more documentations</h2>
+<ul>
+  <li><a href="https://jekyllrb.com">https://jekyllrb.com</a></li>
+  <li><a href="https://pages.github.com/">GitHub Pages</a></li>
+  <li>More themes:
+    <ul>
+      <li>https://github.com/academicpages/academicpages.github.io</li>
+    </ul>
+  </li>
+  <li><a href="https://jekyllrb.com/docs/step-by-step/01-setup/">Jekyll tutorial</a></li>
+</ul>
+
+
+
+              
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+
+              
+
+                
+<h2 id="thanks">Thanks!</h2>
+
+<p>Any questions? 🙂</p>
+
+
+
+              
+            
+
+          </section>
+
+        
+
+        
+
+      </div>
+    </div>
+
+    <script src="/presentations/reveal.js/lib/js/head.min.js"></script>
+    <script src="/presentations/reveal.js/js/reveal.js"></script>
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        
+          transition: 'slide', // none/fade/slide/convex/concave/zoom
+        
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '/presentations/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/presentations/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '/presentations/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
