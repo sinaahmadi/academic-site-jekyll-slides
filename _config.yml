@@ -9,9 +9,9 @@ reveal:
   title_slide:        true
 
 # Setup
-title:                Jekyll and GitHub Pages for Academics
-tagline:              "Markdown slides in Jekyll using reveal.js"
-description:          "A template for creating slide decks using Markdown and <a href='//jekyllrb.com'>Jekyll</a>, using <a href='//github.com/poole/lanyon'>Lanyon</a> by <a href='//twitter.com/mdo'>@mdo</a>."
+title:                Sina Ahmadi's Slides
+tagline:              "Slides in Jekyll"
+description:          "Slides in Markdown and <a href='//jekyllrb.com'>Jekyll</a>, using <a href='https://github.com/adamhollett/jekyll-and-slide'>Jekyll-and-Slide</a>."
 url:                  https://sinaahmadi.github.io/presentations
 baseurl:              /presentations
 markdown:             kramdown
