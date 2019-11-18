@@ -12,7 +12,7 @@ reveal:
 title:                Sina Ahmadi's Slides
 tagline:              "Slides in Jekyll"
 description:          "Slides in Markdown and <a href='//jekyllrb.com'>Jekyll</a>, using <a href='https://github.com/adamhollett/jekyll-and-slide'>Jekyll-and-Slide</a>."
-url:                  https://sinaahmadi.github.io/presentations
+url:                  https://sinaahmadi.github.io/
 baseurl:              /presentations
 markdown:             kramdown
 kramdown:
