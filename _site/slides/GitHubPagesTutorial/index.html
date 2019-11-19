@@ -11,32 +11,30 @@
 
     <!-- Description -->
     
-      <meta name="description" content="Blogging made easy" />
-    
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="/reveal.js/css/reveal.css"/>
+    <link rel="stylesheet" href="/presentations/reveal.js/css/reveal.css"/>
     
-      <link rel="stylesheet" href="/reveal.js/css/theme/serif.css" id="theme"/>
+      <link rel="stylesheet" href="/presentations/reveal.js/css/theme/serif.css" id="theme"/>
     
-    <link rel="stylesheet" href="/public/css/syntax.css">
+    <link rel="stylesheet" href="/presentations/public/css/syntax.css">
 
     <!-- Printing and PDF exports -->
     <script>
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
       link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/presentations/reveal.js/css/print/pdf.css' : '/presentations/reveal.js/css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
 
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="/presentations/apple-touch-icon.png" />
 
-    <link rel="canonical" href="http://localhost:4000/slides/GitHubPagesTutorial/">
+    <link rel="canonical" href="http://localhost:4000/presentations/slides/GitHubPagesTutorial/">
 
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
@@ -55,11 +53,13 @@
 
         
           <section>
+   
+  <hr>
   <h1>Jekyll and GitHub Pages for Academics</h1>
-  <small><a href="/slides/GitHubPagesTutorial/">localhost:4000/slides/GitHubPagesTutorial/</a></small>
-  
-    <p>Blogging made easy</p>
-  
+  <hr>
+  <a href="https://sinaahmadi.github.io/" target="_blank">Sina Ahmadi</a><br>
+  <q>sina.ahmadi@insight-centre.org</q>
+  <!-- <small><a href="/slides/GitHubPagesTutorial/">localhost:4000/slides/GitHubPagesTutorial/</a></small> -->
 </section>
 
         
@@ -262,6 +262,7 @@
                     
 
 <h2 id="directory-structure">Directory structure</h2>
+<h4 id="httpsjekyllrbcomdocsstructure"><a href="https://jekyllrb.com/docs/structure/">https://jekyllrb.com/docs/structure/</a></h4>
 
 <p>A basic Jekyll site usually looks something like this:</p>
 
@@ -407,7 +408,7 @@
   <p>“ When Jekyll is used alongside GitHub, it will automatically re-generate all the HTML pages for your website each time you commit a file.”</p>
 </blockquote>
 
-<p><em>Nota bene</em>: GitHub Pages does not support server-side languages such as PHP, Ruby, or Python.</p>
+<p class="fragment highlight-blue"><i>Nota bene</i>: GitHub Pages does not support server-side languages such as PHP, Ruby, or Python.</p>
 
 
 
@@ -423,8 +424,6 @@
 
 <h2 id="essential-plugins">Essential plugins</h2>
 
-<p>Github does not allow any but a few specific plugins to run for security reasons 🤷🏻‍♂️</p>
-
 <ul>
   <li>Local admin page: <a href="https://github.com/jekyll/jekyll-admin">jekyll-admin</a></li>
   <li>Generate site map: <a href="https://github.com/jekyll/jekyll-sitemap">jekyll-sitemap</a></li>
@@ -433,6 +432,8 @@
   <li>Generate post archives: <a href="https://github.com/jekyll/jekyll-archives">jekyll-archives</a></li>
   <li>Add metadata tags for search engines: <a href="https://github.com/jekyll/jekyll-seo-tag">jekyll-seo-tag</a></li>
 </ul>
+
+<p class="fragment highlight-red">Github does not allow any but a few specific plugins to run for security reasons 🤷🏻‍♂️</p>
 
 
 
@@ -500,7 +501,7 @@
 
                 
 
-<h1 id="lets-create-a-website">Let’s create a website</h1>
+<h2 id="lets-create-a-website">Let’s create a website</h2>
 
 
 
@@ -608,7 +609,7 @@ end
   <li>then <code class="highlighter-rouge">bundle exec jekyll serve</code> to build your site</li>
 </ul>
 
-<p>If you’re not using a <code class="highlighter-rouge">Gemfile</code> you can just run <code class="highlighter-rouge">jekyll serve</code></p>
+<p>If you’re not using a <code class="highlighter-rouge">Gemfile</code>, you can just run <code class="highlighter-rouge">jekyll serve</code></p>
 
 
 
@@ -617,52 +618,6 @@ end
 
               
 
-            
-
-          </section>
-
-        
-
-          <section>
-
-            
-
-              
-
-                
-
-<h2 id="al-folio"><code class="highlighter-rouge">al-folio</code></h2>
-
-<p>https://github.com/alshedivat/al-folio</p>
-
-
-
-              
-            
-
-          </section>
-
-        
-
-          <section>
-
-            
-
-              
-
-                
-
-<h2 id="commenting-system">Commenting system</h2>
-
-<ul>
-  <li><a href="https://disqus.com/">Disqus</a></li>
-  <li><a href="https://www.intensedebate.com/">Intense Debate</a></li>
-  <li>Facebook comments</li>
-</ul>
-
-
-
-              
             
 
           </section>
@@ -697,6 +652,78 @@ end
           <section>
 
             
+            
+
+              
+
+                <section>
+                  
+
+                    
+
+<h2 id="even-more">Even more…</h2>
+<h3 id="a-few-themes-to-start">A few themes to start</h3>
+
+<ul>
+  <li><a href="https://github.com/alshedivat/al-folio"><code class="highlighter-rouge">al-folio</code></a></li>
+  <li><a href="https://github.com/academicpages/academicpages.github.io"><code class="highlighter-rouge">academicpages</code></a></li>
+  <li><a href="https://github.com/LantaoYu/lantaoyu.github.io">https://github.com/LantaoYu/lantaoyu.github.io</a></li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="commenting-system">Commenting system</h3>
+
+<ul>
+  <li><a href="https://disqus.com/">Disqus</a></li>
+  <li><a href="https://www.intensedebate.com/">Intense Debate</a></li>
+  <li>Facebook comments</li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="importing-bibliography">Importing bibliography</h3>
+
+<p><a href="https://github.com/inukshuk/jekyll-scholar">jekyll-scholar</a> does it wonderfully, but not supported by Github Pages.</p>
+
+<p>A wordaround: <a href="http://people.irisa.fr/Francois.Schwarzentruber/bibtextohtml/">Converter from BibTeX to html</a></p>
+
+
+
+                  
+                </section>
+
+              
+
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
 
               
 
@@ -706,11 +733,6 @@ end
 <ul>
   <li><a href="https://jekyllrb.com">https://jekyllrb.com</a></li>
   <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-  <li>More themes:
-    <ul>
-      <li>https://github.com/academicpages/academicpages.github.io</li>
-    </ul>
-  </li>
   <li><a href="https://jekyllrb.com/docs/step-by-step/01-setup/">Jekyll tutorial</a></li>
 </ul>
 
@@ -748,8 +770,8 @@ end
       </div>
     </div>
 
-    <script src="/reveal.js/lib/js/head.min.js"></script>
-    <script src="/reveal.js/js/reveal.js"></script>
+    <script src="/presentations/reveal.js/lib/js/head.min.js"></script>
+    <script src="/presentations/reveal.js/js/reveal.js"></script>
     <script>
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
@@ -764,9 +786,9 @@ end
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: '/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '/reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: '/reveal.js/plugin/notes/notes.js', async: true }
+          { src: '/presentations/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/presentations/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '/presentations/reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
 

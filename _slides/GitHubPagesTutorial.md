@@ -1,6 +1,6 @@
 ---
 title: Jekyll and GitHub Pages for Academics
-description: Blogging made easy
+description: 
 theme: serif
 ---
 
@@ -83,6 +83,7 @@ Read more about the [Jekyll philosophy](https://jekyllrb.com/philosophy/).
 ~~
 
 ## Directory structure
+#### [https://jekyllrb.com/docs/structure/](https://jekyllrb.com/docs/structure/)
 
 A basic Jekyll site usually looks something like this:
 
@@ -162,13 +163,12 @@ Anywhere that can serve static pages including:
 
 > &ldquo; When Jekyll is used alongside GitHub, it will automatically re-generate all the HTML pages for your website each time you commit a file.&rdquo;
 
-*Nota bene*: GitHub Pages does not support server-side languages such as PHP, Ruby, or Python.
+<p class="fragment highlight-blue"><i>Nota bene</i>: GitHub Pages does not support server-side languages such as PHP, Ruby, or Python.</p>
+
 
 ~~
 
 ## Essential plugins
-
-Github does not allow any but a few specific plugins to run for security reasons 🤷🏻‍♂️
 
 - Local admin page: [jekyll-admin](https://github.com/jekyll/jekyll-admin)
 - Generate site map: [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
@@ -176,6 +176,8 @@ Github does not allow any but a few specific plugins to run for security reasons
 - Importing bibliography: [jekyll-scholar](https://github.com/inukshuk/jekyll-scholar) ✖︎
 - Generate post archives: [jekyll-archives](https://github.com/jekyll/jekyll-archives)
 - Add metadata tags for search engines: [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag)
+
+<p class="fragment highlight-red">Github does not allow any but a few specific plugins to run for security reasons 🤷🏻‍♂️</p>
 
 ~~
 
@@ -201,7 +203,7 @@ You can only create **one** user or organization site for each GitHub account.
 
 ---- 
 
-# Let's create a website
+## Let's create a website
 
 ----
 
@@ -252,21 +254,7 @@ Bundler installs the gems in your `Gemfile`
 - `bundle install` to install the gems
 - then `bundle exec jekyll serve` to build your site
 
-If you’re not using a `Gemfile` you can just run `jekyll serve`
-
-----
-
-## `al-folio`
-
-https://github.com/alshedivat/al-folio
-
-----
-
-## Commenting system
-
-- [Disqus](https://disqus.com/)
-- [Intense Debate](https://www.intensedebate.com/)
-- Facebook comments
+If you’re not using a `Gemfile`, you can just run `jekyll serve`
 
 ----  
 
@@ -278,11 +266,35 @@ https://github.com/alshedivat/al-folio
 
 ----
 
+## Even more...
+### A few themes to start
+
+- [`al-folio`](https://github.com/alshedivat/al-folio)
+- [`academicpages`](https://github.com/academicpages/academicpages.github.io)
+- [https://github.com/LantaoYu/lantaoyu.github.io](https://github.com/LantaoYu/lantaoyu.github.io)
+
+~~ 
+
+### Commenting system
+
+- [Disqus](https://disqus.com/)
+- [Intense Debate](https://www.intensedebate.com/)
+- Facebook comments
+
+~~ 
+
+### Importing bibliography
+
+[jekyll-scholar](https://github.com/inukshuk/jekyll-scholar) does it wonderfully, but not supported by Github Pages.
+
+A wordaround: [Converter from BibTeX to html](http://people.irisa.fr/Francois.Schwarzentruber/bibtextohtml/)
+
+
+----
+
 ## For more documentations
 - [https://jekyllrb.com](https://jekyllrb.com)
 - [GitHub Pages](https://pages.github.com/)
-- More themes:
-  * https://github.com/academicpages/academicpages.github.io
 - [Jekyll tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/)
 
 

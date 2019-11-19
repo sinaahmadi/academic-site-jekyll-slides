@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Sina Ahmadi's Slides</title>
- <link href="http://localhost:4000/atom.xml" rel="self"/>
- <link href="http://localhost:4000/"/>
- <updated>2019-11-18T20:37:02+00:00</updated>
+ <link href="http://localhost:4000/presentations/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/presentations/"/>
+ <updated>2019-11-19T11:37:37+00:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Sina Ahmadi</name>
