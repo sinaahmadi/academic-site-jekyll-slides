@@ -37,4 +37,5 @@ defaults:
     values:
       layout: slides
 
+
 exclude: [other]

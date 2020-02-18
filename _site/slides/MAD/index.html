@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+      
+        Modified Adsorption Analysis for Translation Inference | Sina Ahmadi's Slides
+      
+    </title>
+
+    <!-- Description -->
+    
+
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="/presentations/reveal.js/css/reveal.css"/>
+    
+      <link rel="stylesheet" href="/presentations/reveal.js/css/theme/white.css" id="theme"/>
+    
+    <link rel="stylesheet" href="/presentations/public/css/syntax.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/presentations/reveal.js/css/print/pdf.css' : '/presentations/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <link rel="apple-touch-icon" href="/presentations/apple-touch-icon.png" />
+
+    <link rel="canonical" href="http://localhost:4000/presentations/slides/MAD/">
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    
+
+    <div class="reveal">
+      <div class="slides">
+
+        
+        
+
+        
+          <section>
+   
+  <hr>
+  <h2 style="text-align: center;">Modified Adsorption Analysis for Translation Inference</h2>
+  <hr>
+  <a href="https://sinaahmadi.github.io/" target="_blank">Sina Ahmadi</a><br>
+  <q>sina.ahmadi@insight-centre.org</q>
+  <!-- <small><a href="/slides/MAD/">localhost:4000/slides/MAD/</a></small> -->
+  <!-- <img src="https://www.aerobatic.com/media/aerobatic-header-logo.png"> -->
+</section>
+
+        
+
+        
+
+          <section>
+
+            
+
+              
+
+                <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<h3 id="adsorption-algorithm">Adsorption algorithm</h3>
+<h4 id="preliminaries">Preliminaries</h4>
+<h4 id="random-walk-view">Random-walk view</h4>
+<h4 id="averaging-view">Averaging view</h4>
+<h3 id="modified-adsorption-algorithm">Modified Adsorption algorithm</h3>
+<h4 id="references">References</h4>
+
+
+              
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+
+              
+
+                
+
+<h2 id="adsorption-algorithm-1">Adsorption algorithm</h2>
+
+<p>Adsorption is a general algorithm framework for transductive learning where the learner is given a small set of labelled examples and large set of unlablled examples.</p>
+
+<p><strong>Goal</strong>: Label all the unlabelled examples and also, relabel the labelled examples.</p>
+
+
+
+              
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+            
+
+              
+
+                <section>
+                  
+
+                    
+<h2 id="preliminaries-1">Preliminaries</h2>
+
+<!-- <section>
+	\[\begin{aligned}
+	 \\
+	\\
+	\\
+	
+	\end{aligned} \]
+</section> -->
+
+<p><script type="math/tex">G = (V, E, W)</script><br />
+<script type="math/tex">v \in V, e = (a, b) \in V \times V</script><br />
+<script type="math/tex">W_{ab} \in \mathbb{R}_+</script><br />
+<script type="math/tex">n = |V|</script><br />
+<script type="math/tex">n_l</script>: number of examples for which we have prior knowledge.
+<script type="math/tex">n_u</script>: number of examples to be labelled. 
+<script type="math/tex">n = n_l + n_u</script><br />
+<script type="math/tex">\mathcal{L} = \{1...m\}</script>: set of the possible labels<br />
+<script type="math/tex">m = |\mathcal{L}|</script></p>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<p>Each instance <script type="math/tex">v \in V</script> is associated with <script type="math/tex">Y_v, \hat{Y}_v \in \mathbb{R}_+^m</script>:</p>
+
+<p><script type="math/tex">% <![CDATA[
+Y_v=
+  \begin{bmatrix}
+    Y_{v0} & ... & Y_{vl} & ... & Y_{vm}
+  \end{bmatrix} %]]></script> prior knowledge</p>
+
+<p><script type="math/tex">% <![CDATA[
+\hat{Y}_v=
+  \begin{bmatrix}
+    \hat{Y}_{v0} & ... & \hat{Y}_{vl} & ... & \hat{Y}_{vm}
+  \end{bmatrix} %]]></script> output of the algorithm</p>
+
+<p><script type="math/tex">Y, \hat{Y} \in \mathbb{R}_+^{n \times m}</script>: the matrices whose rows are <script type="math/tex">Y_v, \hat{Y}_v</script> respectively.</p>
+
+<p><script type="math/tex">0_d</script>: all-zeros row vector of dimension <script type="math/tex">d</script>.</p>
+
+
+
+                  
+                </section>
+
+              
+
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+            
+
+              
+
+                <section>
+                  
+
+                    
+
+<h2 id="random-walk-view-1">Random-walk view</h2>
+
+<p>The adsorption algorithm can be viewed as a <em>controlled</em> random walk (RW) over <script type="math/tex">G</script> formalized via three actions:</p>
+
+<ul>
+  <li><em>inject</em> (<script type="math/tex">inj</script>) with predefined probability <script type="math/tex">p_v^{inj}</script></li>
+  <li><em>continue</em> (<script type="math/tex">cont</script>): with predefined probability <script type="math/tex">p_v^{cont}</script></li>
+  <li><em>abandon</em> (<script type="math/tex">abnd</script>): with predefined probability <script type="math/tex">p_v^{abnd}</script></li>
+</ul>
+
+<p><script type="math/tex">p_v^{inj}, p_v^{cont}, p_v^{abnd} \geq 0</script> per vertex <script type="math/tex">v \in V</script>.
+<script type="math/tex">p_v^{inj} + p_v^{cont} + p_v^{abnd} = 1</script></p>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<p>To label any vertex <script type="math/tex">v \in V</script>, we initiate a random-walk starting at <script type="math/tex">v</script> facing three options:</p>
+
+<ul>
+  <li>with <script type="math/tex">p_v^{inj}</script>, RW stops and return <script type="math/tex">Y_v</script>(i.e. <em>inject</em>)</li>
+  <li>with <script type="math/tex">p_v^{cont}</script>, RW <em>abandons</em> the labelling process and return <script type="math/tex">0_d</script></li>
+  <li>with <script type="math/tex">p_v^{abnd}</script>, RW <em>continues</em> to one of <script type="math/tex">v</script>’s neighbours <script type="math/tex">v'</script> with probability proportional to <script type="math/tex">W_{v'v} \geq 0</script></li>
+</ul>
+
+<p>For unlabelled examples, <script type="math/tex">p_v^{inj} = 0</script>.</p>
+
+<p>By definition, <script type="math/tex">W_{v'v} = 0</script> if <script type="math/tex">(v, v')  \notin  E</script>.</p>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="in-summary">In summary:</h3>
+
+<section>
+$$
+Pr[v' | v] = \left\{\begin{matrix}
+\frac{W_{v'v}}{\sum_{u : (u, v) \in E}W_{uv}} &amp; (v', v) \in E\\ 
+0 &amp; \text{otherwise}
+\end{matrix}\right.
+$$
+</section>
+
+<p><script type="math/tex">\hat{Y}_v</script> for node <script type="math/tex">v \in V</script> is given by:</p>
+
+<section>
+$$\hat{Y}_v = p_v^{inj} \times Y_v + p_v^{cont} \times \sum_{v' : (v', v) \in E} Pr[v' | v] \hat{Y}_{v'} + p_v^{abnd} \times 0_m $$
+</section>
+
+<!-- <script type="math/tex; mode=display">
+	\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+</script> -->
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h2 id="averaging-view-1">Averaging view</h2>
+
+<p>Encoding ignorance about the correct label by using a dummy variable <script type="math/tex">\mathtt{v} \notin \mathcal{L}</script>, so <script type="math/tex">Y_v, \hat{Y}_v \in \mathbb{R}_+^{m + 1}</script></p>
+
+<p>If the RW is abandoned, then the corresponding labelling vector is zero for all true labels in <script type="math/tex">\mathcal{L}</script>, and an arbitrary value of unit for <script type="math/tex">\mathtt{v}</script></p>
+<ul>
+  <li>A-priori no vertex is associated with <script type="math/tex">\mathtt{v}</script>, so <script type="math/tex">Y_{\mathtt{v}v} = 0</script></li>
+  <li>Replace <script type="math/tex">0_m</script> with <script type="math/tex">r \in \mathbb{R}_+^{m + 1}</script> where <script type="math/tex">r_l = 0</script> for <script type="math/tex">l \neq \mathtt{v}</script> and <script type="math/tex">r_\mathtt{v} = 1</script>.</li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="initialization-based-on-1">Initialization (based on <a href="#ref1">[1]</a>)</h3>
+
+<p align="center">
+$$p_v^{cont} \propto c_v$$ $$p_v^{inj} \propto d_v$$
+</p>
+
+<ul>
+  <li><script type="math/tex">c_v \in [0, 1]</script> is monotonically decreasing with the number of neighbours for node <script type="math/tex">v</script> in <script type="math/tex">G</script></li>
+  <li><script type="math/tex">d_v \geq 0</script> is monotonically increasing with the entropy</li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<p><script type="math/tex">p_v^{cont} = \frac{c_v}{z_v}</script> ; <script type="math/tex">p_v^{inj} = \frac{d_v}{z_v}</script> ; <script type="math/tex">p_v^{abnd} = 1 - p_v^{cont} - p_v^{inj}</script></p>
+
+<div style="border:1px solid #000;">
+
+<!-- We first compute the entropy of the transition probabilities for each node: -->
+
+$$ H[v] = - \sum_u \text{Pr}[u|v]\text{log Pr}[u|v]$$
+$$f(x) = \frac{\text{log} \beta}{\text{log}(\beta + e^x)}$$
+$$c_v = f(H[v])$$
+$$
+d_v = \left\{\begin{matrix}
+(1-c_v) \times \sqrt{H[v]} &amp; \text{the vertex v is labelled}\\ 
+0 &amp; \text{the vertex v is unlabelled}
+\end{matrix}\right.
+$$
+$$z_v = \text{max}(c_v + d_v, 1)$$
+$$\beta = 2$$
+
+</div>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+<h2 id="objective-function">Objective function</h2>
+
+<p><img src="../../imgs/adsorption_algorithm.png" alt="adsorption algorithm" /></p>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<p>The adsorption algorithm minimizes some objective function <i>Q</i>. Talukdar et al. <a href="#ref1">[1]</a> prove that:</p>
+
+<blockquote>
+  <p>There does not exist a function <i>Q</i> with continuous second partial derivatives such that the Adsorption algorithm converges when gradient of <i>Q</i> is equal to 1. </p>
+</blockquote>
+
+<font color="green"><b>There is no <i>Q</i> such that its local optimal would be the output of the adsorption algorithm.</b></font>
+
+
+
+                  
+                </section>
+
+              
+
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+            
+
+              
+
+                <section>
+                  
+
+                    
+
+<h2 id="modified-adsorption-algorithm-mad">Modified Adsorption algorithm (MAD)</h2>
+
+<p>An objective requiring:</p>
+
+<ol>
+  <li>
+    <script type="math/tex; mode=display">Y_u \approx \hat{Y}_v</script>
+  </li>
+  <li><script type="math/tex">\hat{Y}_u \approx \hat{Y}_v</script>, if <script type="math/tex">W_{uv}</script> is large</li>
+  <li>
+    <script type="math/tex; mode=display">\hat{Y}_v \approx r</script>
+  </li>
+</ol>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<h3 id="redefining-matrices">Redefining matrices</h3>
+
+<script type="math/tex; mode=display">W'_{vu} = p_v^{cont} \times W_{vu}</script>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<p><img src="../../imgs/modified_adsorption_algorithm.png" alt="adsorption algorithm" /></p>
+
+
+
+                  
+                </section>
+
+              
+
+                <section>
+                  
+
+                    
+
+<script type="math/tex; mode=display">\mathop{\text{arg min}}_{\hat{Y}} \sum_{l=1}^{m+1} 
+\begin{bmatrix}
+|| S\hat{Y}_l - SY_l||^2 + \mu_1 \sum_{u, v} M_{uv} (\hat{Y}_{ul} - \hat{Y}_{vl})^2 \\ 
++ \mu_2|| \hat{Y}_l - R_l||^2
+\end{bmatrix}</script>
+
+<ul>
+  <li><script type="math/tex">m</script> labels, +1 dummy label</li>
+  <li><script type="math/tex">M= W'^T + W'</script> is the symmetrized weight matrix</li>
+  <li><script type="math/tex">\hat{Y}_{vl}</script>: weight of label <script type="math/tex">l</script> on node <script type="math/tex">v</script></li>
+  <li><script type="math/tex">Y_{vl}</script>: seed weight of label <script type="math/tex">l</script> on node <script type="math/tex">v</script></li>
+  <li><script type="math/tex">S</script>: diagonal matrix, non-zero for seed nodes</li>
+  <li><script type="math/tex">R_{vl}</script>: regularization target for label <script type="math/tex">l</script> on node <script type="math/tex">v</script></li>
+</ul>
+
+
+
+                  
+                </section>
+
+              
+
+            
+
+          </section>
+
+        
+
+          <section>
+
+            
+
+              
+
+                
+<h2 id="references-1">References</h2>
+
+<p id="ref1">Talukdar, Partha Pratim, and Koby Crammer. "New regularized algorithms for transductive learning." Joint European Conference on Machine Learning and Knowledge Discovery in Databases. Springer, Berlin, Heidelberg, 2009.</p>
+
+
+
+              
+            
+
+          </section>
+
+        
+
+        
+
+      </div>
+    </div>
+
+    <script src="/presentations/reveal.js/lib/js/head.min.js"></script>
+    <script src="/presentations/reveal.js/js/reveal.js"></script>
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        
+          transition: 'slide', // none/fade/slide/convex/concave/zoom
+        
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '/presentations/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/presentations/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '/presentations/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
