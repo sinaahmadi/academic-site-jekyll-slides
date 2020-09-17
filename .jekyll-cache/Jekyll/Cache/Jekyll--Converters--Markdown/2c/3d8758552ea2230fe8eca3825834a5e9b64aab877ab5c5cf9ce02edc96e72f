@@ -1,0 +1,75 @@
+I"�	<h2 id="outline">Outline</h2>
+
+<h3 id="context">Context</h3>
+<h3 id="objectives">Objectives</h3>
+<h3 id="methodology">Methodology</h3>
+<h3 id="datasets-description">Datasets description</h3>
+<h3 id="prelimenary-results">Prelimenary results</h3>
+
+<hr />
+
+<h3 id="context-1">Context</h3>
+
+<blockquote>
+  <p>&ldquo; Dictionaries are treasure houses of data on the uses of words. They are also our best starting point for all questions regarding word sense distinctions, in NLP, the humanities or lexicography. But to reveal the dictionary's treasures in a systematic way is no simple.&rdquo;</p>
+  <footer>— <a href="https://www.jstor.org/stable/30204631"> Adam Kilgarriff (Dictionary Word Sense Distinctions: An Enquiry into Their Nature)</a></footer>
+</blockquote>
+
+<p>~~</p>
+
+<h4 id="word-senses">Word senses</h4>
+<ul>
+  <li>Words have different meanings, i.e. <em>senses</em></li>
+  <li>Senses may be differently described in various resources:
+    <ul>
+      <li>dictionaries</li>
+      <li>encyclopedia</li>
+      <li>thesauri</li>
+      <li>WordNets</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Word sense alignment</strong> ➡ linking senses across resources</p>
+
+<hr />
+
+<h3 id="objectives-1">Objectives</h3>
+
+<ul>
+  <li>
+    <p><strong>What are the relevant features that can be used for WSA?</strong> 
+➡ &lt;p class="fragment highlight-green"&gt;Manual extraction of features&lt;/p&gt;</p>
+  </li>
+  <li>
+    <p><strong>How representation learning can help in improving the results?</strong> 
+➡ &lt;p class="fragment highlight-green"&gt;Restricted Boltzmann machine&lt;/p&gt;</p>
+  </li>
+  <li>
+    <p><strong>Use the features for classifying semantic relationship between two given senses</strong>
+➡ <code class="highlighter-rouge">exact</code>, <code class="highlighter-rouge">narrower</code>, <code class="highlighter-rouge">broader</code>, <code class="highlighter-rouge">related</code>, <code class="highlighter-rouge">none</code></p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="methodology-1">Methodology</h3>
+
+<ul>
+  <li>Feature extraction</li>
+  <li>Data augmentation:
+    <ul>
+      <li>symmetric relationships: <code class="highlighter-rouge">exact</code>, <code class="highlighter-rouge">related</code></li>
+      <li>asymmetric relationships: <code class="highlighter-rouge">narrower</code>, <code class="highlighter-rouge">broader</code></li>
+    </ul>
+  </li>
+  <li>Classification: SVM, Logistic regression, etc.</li>
+</ul>
+
+<hr />
+
+<hr />
+<h2 id="thanks">Thanks!</h2>
+
+<p>Any questions? 🙂</p>
+:ET

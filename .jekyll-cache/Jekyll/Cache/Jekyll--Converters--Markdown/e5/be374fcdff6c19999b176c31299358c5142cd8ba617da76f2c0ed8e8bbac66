@@ -1,0 +1,62 @@
+I"P<p><img src="../../imgs/LREC_submission.png" alt="LREC submision first page" height="500" /></p>
+
+<hr />
+
+<h2 id="outline">Outline</h2>
+
+<h3 id="context">Context</h3>
+<h3 id="objectives">Objectives</h3>
+<h3 id="methodology">Methodology</h3>
+<h3 id="datasets-description">Datasets description</h3>
+<h3 id="conclusion-and-future-steps">Conclusion and future steps</h3>
+
+<hr />
+
+<h3 id="context-1">Context</h3>
+
+<h4 id="lexical-semantic-resources-lsrs">Lexical-Semantic Resources (LSRs)</h4>
+
+<p><img src="../../imgs/Louisiana_Museum_Radical.jpg" alt="Louisiana Museum Radical" width="500" /></p>
+
+<ul>
+  <li>dictionaries</li>
+  <li>encyclopedia</li>
+  <li>thesauri</li>
+  <li>WordNets</li>
+</ul>
+
+<p>~~</p>
+
+<h4 id="why-lsrs">Why LSRs?</h4>
+
+<ul>
+  <li>Important foundations of numerous natural language processing (NLP) tasks including:
+    <ul>
+      <li>word sense disambiguation</li>
+      <li>machine translation</li>
+      <li>question answering</li>
+      <li>automatic summarization</li>
+    </ul>
+  </li>
+</ul>
+
+<p>~~</p>
+
+<h4 id="why-linking-dictionaries">Why linking dictionaries?</h4>
+
+<p>~~</p>
+<h4 id="we-need-data">We need data</h4>
+
+<p><img src="https://media.giphy.com/media/tZaFa1m8UfzXy/giphy.gif" /></p>
+
+<p>~~</p>
+
+<h4 id="what-has-been-done">What has been done?</h4>
+
+<hr />
+
+<hr />
+<h2 id="thanks">Thanks!</h2>
+
+<p>Any questions? 🙂</p>
+:ET

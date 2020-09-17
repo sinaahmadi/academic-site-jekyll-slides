@@ -1,0 +1,99 @@
+I"r<h2 id="outline">Outline</h2>
+
+<h3 id="context">Context</h3>
+<h3 id="objectives">Objectives</h3>
+<h3 id="methodology">Methodology</h3>
+<h3 id="datasets-description">Datasets description</h3>
+<h3 id="prelimenary-results">Prelimenary results</h3>
+
+<hr />
+
+<h3 id="context-1">Context</h3>
+
+<blockquote>
+  <p>&ldquo; Dictionaries are treasure houses of data on the uses of words. They are also our best starting point for all questions regarding word sense distinctions, in NLP, the humanities or lexicography. But to reveal the dictionary's treasures in a systematic way is no simple.&rdquo;</p>
+  <footer>— <a href="https://www.jstor.org/stable/30204631"> Adam Kilgarriff (Dictionary Word Sense Distinctions: An Enquiry into Their Nature)</a></footer>
+</blockquote>
+
+<p>~~</p>
+
+<h4 id="word-senses">Word senses</h4>
+<ul>
+  <li>Words have different meanings, i.e. <em>senses</em></li>
+  <li>Senses may be differently described in various resources:
+    <ul>
+      <li>dictionaries</li>
+      <li>encyclopedia</li>
+      <li>thesauri</li>
+      <li>WordNets</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Word sense alignment</strong> ➡ linking senses across resources</p>
+
+<p>~~</p>
+
+<p><code class="highlighter-rouge">entire</code> (adjective)</p>
+
+<p><img src="../../imgs/entire_lemma.png" alt="entire adjective" width="800" /></p>
+
+<hr />
+
+<h3 id="objectives-1">Objectives</h3>
+
+<p class="fragment">1. What are the relevant features that can be used for WSA? ➡ Manual extraction of features</p>
+<p class="fragment">2. How representation learning can help in improving the results? ➡ Restricted Boltzmann machine</p>
+<p class="fragment">3. Use the features for classifying semantic relationship between two given senses ➡ <q>exact</q>, <q>narrower</q>, <q>broader</q>, <q>related</q>, <q>none</q>  </p>
+
+<hr />
+
+<h3 id="methodology-1">Methodology</h3>
+
+<ol>
+  <li>Feature extraction</li>
+  <li>Data augmentation:
+    <ul>
+      <li>symmetric relationships: <code class="highlighter-rouge">exact</code>, <code class="highlighter-rouge">related</code></li>
+      <li>asymmetric relationships: <code class="highlighter-rouge">narrower</code>, <code class="highlighter-rouge">broader</code></li>
+    </ul>
+  </li>
+  <li>Representation learning</li>
+  <li>Classification: <code class="highlighter-rouge">SVM</code>, <code class="highlighter-rouge">Logistic regression</code>, etc.</li>
+</ol>
+
+<p>~~</p>
+
+<h4 id="feature-extraction">Feature extraction</h4>
+<p><img src="../../imgs/wsa_features.png" alt="WSA features" height="500" /></p>
+
+<p>~~</p>
+
+<h5 id="some-instances">Some instances</h5>
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS7Jc31ADjOb6_nLl-hm28JHCF-_fBU8RdKeXsjz7DMzrTys4WM8hcFHuR3NSpeWhb6xJAZ2_L94nPp/pubhtml?gid=1103311453&amp;single=true&amp;widget=true&amp;headers=true" style="width: 100%; height: 60vh;"></iframe>
+
+<p>~~</p>
+
+<h4 id="data-augmentation">Data augmentation</h4>
+<p>➡ Collecting new data instances by inverting sense order</p>
+
+<p>Example:</p>
+
+<p class="fragment highlight-red">Semantic relationship: narrower</p>
+<p class="fragment">Sense 1: an expert who observes and comments on something</p>
+<p class="fragment">Sense 2: an annotator</p>
+
+<p>~~</p>
+
+<h4 id="representation-learning">Representation learning</h4>
+
+<p><img src="../../imgs/1200px-Restricted_Boltzmann_machine.svg.png" alt="RBM" height="500" /></p>
+
+<hr />
+
+<hr />
+<h2 id="thanks">Thanks!</h2>
+
+<p>Any questions? 🙂</p>
+:ET

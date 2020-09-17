@@ -1,0 +1,168 @@
+I"9<h2 id="outline">Outline</h2>
+
+<h3 id="context">Context</h3>
+<h3 id="objectives">Objectives</h3>
+<h3 id="methodology">Methodology</h3>
+<h3 id="datasets-description">Datasets description</h3>
+<h3 id="prelimenary-results">Prelimenary results</h3>
+
+<hr />
+
+<h3 id="context-1">Context</h3>
+
+<blockquote>
+  <p>&ldquo; Dictionaries are treasure houses of data on the uses of words. They are also our best starting point for all questions regarding word sense distinctions, in NLP, the humanities or lexicography. But to reveal the dictionary's treasures in a systematic way is no simple.&rdquo;</p>
+  <footer>— <a href="https://www.jstor.org/stable/30204631"> Adam Kilgarriff (Dictionary Word Sense Distinctions: An Enquiry into Their Nature)</a></footer>
+</blockquote>
+
+<p>~~</p>
+
+<h4 id="word-senses">Word senses</h4>
+<ul>
+  <li>Words have different meanings, i.e. <em>senses</em></li>
+  <li>Senses may be differently described in various resources:
+    <ul>
+      <li>dictionaries</li>
+      <li>encyclopedia</li>
+      <li>thesauri</li>
+      <li>WordNets</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Word sense alignment</strong> ➡ linking senses across resources</p>
+
+<p>~~</p>
+
+<table>
+<thead>
+  <tr>
+    <th colspan="2">entire (adjective)</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="4">WordNethttps://wordnet.princeton.edu/</td>
+    <td>- (of leaves or petals) having a smooth edge; not broken up into teeth or lobes</td>
+  </tr>
+  <tr>
+    <td>- constituting the full quantity or extent; complete</td>
+  </tr>
+  <tr>
+    <td>- constituting the undiminished entirety; lacking nothing essential especially not damaged</td>
+  </tr>
+  <tr>
+    <td>- (used of domestic animals) sexually competent</td>
+  </tr>
+  <tr>
+    <td rowspan="4">Websterhttps://www.websters1913.com</td>
+    <td>- complete in all parts; undivided; undiminished; whole; full and perfect; not deficient</td>
+  </tr>
+  <tr>
+    <td>- without mixture or alloy of anything; unqualified; morally whole; pure; faithful</td>
+  </tr>
+  <tr>
+    <td>- not gelded; -- said of a horse</td>
+  </tr>
+  <tr>
+    <td>- internal; interior.</td>
+  </tr>
+  <tr>
+    <td rowspan="8">Wiktionaryhttps://en.wiktionary.org/</td>
+    <td>- (sometimes postpositive) Whole; complete.</td>
+  </tr>
+  <tr>
+    <td>- (botany) Having a smooth margin without any indentation.</td>
+  </tr>
+  <tr>
+    <td>- (botany) Consisting of a single piece, as a corolla.</td>
+  </tr>
+  <tr>
+    <td>- (complex analysis, of a complex function) Complex-differentiable on all of $\mathbb{C}$.</td>
+  </tr>
+  <tr>
+    <td>- (of a male animal) Not gelded.</td>
+  </tr>
+  <tr>
+    <td>- morally whole; pure; sheer</td>
+  </tr>
+  <tr>
+    <td>- Internal; interior.</td>
+  </tr>
+  <tr>
+    <td>used for emphasizing that you mean all or every part of something</td>
+  </tr>
+  <tr>
+    <td>Longmanhttps://www.ldoceonline.com</td>
+    <td>used when you want to emphasize that you mean all of a group, period of time, amount etc</td>
+  </tr>
+  <tr>
+    <td rowspan="4">Oxfordhttps://www.lexico.com</td>
+    <td>With no part left out; whole.</td>
+  </tr>
+  <tr>
+    <td>Without qualification or reservations; absolute.</td>
+  </tr>
+  <tr>
+    <td>Not broken, damaged, or decayed.</td>
+  </tr>
+  <tr>
+    <td>(of a male horse) not castrated.</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Botany (of a leaf) without indentations or division into leaflets.</td>
+  </tr>
+  <tr>
+    <td>Cambridgehttps://dictionary.cambridge.org/</td>
+    <td>whole or complete, with nothing lacking, or continuous, without interruption</td>
+  </tr>
+</tbody>
+</table>
+
+<hr />
+
+<h3 id="objectives-1">Objectives</h3>
+
+<p class="fragment">1. What are the relevant features that can be used for WSA? ➡ Manual extraction of features</p>
+<p class="fragment">2. How representation learning can help in improving the results? ➡ Restricted Boltzmann machine</p>
+<p class="fragment">3. Use the features for classifying semantic relationship between two given senses ➡ <q>exact</q>, <q>narrower</q>, <q>broader</q>, <q>related</q>, <q>none</q>  </p>
+
+<hr />
+
+<h3 id="methodology-1">Methodology</h3>
+
+<ol>
+  <li>Feature extraction</li>
+  <li>Data augmentation:
+    <ul>
+      <li>symmetric relationships: <code class="highlighter-rouge">exact</code>, <code class="highlighter-rouge">related</code></li>
+      <li>asymmetric relationships: <code class="highlighter-rouge">narrower</code>, <code class="highlighter-rouge">broader</code></li>
+    </ul>
+  </li>
+  <li>Classification: <code class="highlighter-rouge">SVM</code>, <code class="highlighter-rouge">Logistic regression</code>, etc.</li>
+</ol>
+
+<p>~~</p>
+
+<ol>
+  <li>Feature extraction
+<img src="../../imgs/wsa_features.png" alt="WSA features" height="500" /></li>
+</ol>
+
+<p>~~</p>
+
+<ol>
+  <li>Data augmentation
+➡ Collecting new data instances by inverting sense order</li>
+</ol>
+
+<p>Example:</p>
+
+<hr />
+
+<hr />
+<h2 id="thanks">Thanks!</h2>
+
+<p>Any questions? 🙂</p>
+:ET
